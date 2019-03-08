@@ -124,25 +124,25 @@ DramaImages = [
       'url("https://swebtoon-phinf.pstatic.net/20171025_252/1508878599647EKo88_JPEG/thumbnail.jpg")',
     ]
 HorrorDivs = [
-    '<div class="item"><p>Elena <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Elena <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
 
-    '<div class="item"><p>Witch Creek <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Witch Creek <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
   
-    '<div class="item"><p>Shriek <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Shriek <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
     ]
 FantasyDivs = [
-    '<div class="item"><p>Castle Swimmer <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Castle Swimmer <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
 
-    '<div class="item"><p>Empyrea <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Empyrea <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
   
-    '<div class="item"><p>Winter Woods <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Winter Woods <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
     ]
 DramaDivs = [
-    '<div class="item"><p>Subzero <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Subzero <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
 
-    '<div class="item"><p>Edith <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Edith <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
   
-    '<div class="item"><p>Gourmet Hound <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Gourmet Hound <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
     ]
 
     
@@ -191,13 +191,5 @@ DramaDivs = [
     items[2].style.background = HorrorImages[2]
     items[2].style.backgroundSize = '100% 100%'
   }
-  
-
-  
-
-  $('div').on('click', function() {
-      $(this).toggleClass('show-description');
-  });
 </script>
-
 </body>
