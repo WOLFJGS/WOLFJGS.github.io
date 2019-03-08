@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #232323;
+}
+div {
+  height: 400px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Londrina Shadow', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #aaaaaa;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+ ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      text-align: center
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+  
+}
+
+</style>
+
+</head>
+
+<body>
+ <ul>
+      <li><button onclick="Drama()">Drama</button></li>
+      <li><button onclick="Fantasy()">Fantasy</button></li>
+      <li><button onclick="Horror()">Horror</button></li>
+    </ul>
+<h1>WEBcomic</h1>
+<h2>a USELESS project</h2>
+
+<div id="shjgajm"> </div>
+
+<script>
+HorrorImages = [
+          'url("https://swebtoon-phinf.pstatic.net/20150605_41/1433496084508D838Q_JPEG/EC8DB8EB84A4EC9DBC_ipad.jpg")',
+          'url("http://nerdreactor.com/wp-content/uploads/2017/09/witch-creek-2-art-04-thumb.jpg")',
+          'url("https://swebtoon-phinf.pstatic.net/20160920_105/1474357227248NeN9C_JPEG/EC8DB8EB84A4EC9DBC_ipad.jpg")',
+    ]
+FantasyImages = [
+			'url("https://swebtoon-phinf.pstatic.net/20181218_245/1545092365232CyuWb_JPEG/10_EC8DB8EB84A4EC9DBC_ipad.jpg")',
+			'url("https://swebtoon-phinf.pstatic.net/20180625_18/1529889284757U2pzO_JPEG/10_EC8DB8EB84A4EC9DBC_ipad.jpg")',
+			'url("https://swebtoon-phinf.pstatic.net/20160108_225/1452239317218TkAKm_JPEG/EC8DB8EB84A4EC9DBC_ipad.jpg")',
+	  ]
+DramaImages = [
+      'url("https://swebtoon-phinf.pstatic.net/20181022_300/1540173096133NHuNf_JPEG/10_EC8DB8EB84A4EC9DBC_ipad.jpg")',
+      'url("https://shortcut-test2.s3.amazonaws.com/uploads/project/attachment/60323/default_thumbnail.jpg")',
+      'url("https://swebtoon-phinf.pstatic.net/20171025_252/1508878599647EKo88_JPEG/thumbnail.jpg")',
+    ]
+HorrorDivs = [
+    '<div class="item"><p>Elena <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
+
+    '<div class="item"><p>Witch Creek <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+  
+    '<div class="item"><p>Shriek <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
+    ]
+FantasyDivs = [
+    '<div class="item"><p>Castle Swimmer <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
+
+    '<div class="item"><p>Empyrea <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+  
+    '<div class="item"><p>Winter Woods <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
+    ]
+DramaDivs = [
+    '<div class="item"><p>Subzero <span class="price">$14</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
+
+    '<div class="item"><p>Edith <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+  
+    '<div class="item"><p>Gourmet Hound <span class="price">$8</span><br /><small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p></div>',
+    ]
+
+    
+  function Drama() {
+    Edith = document.getElementById("shjgajm")
+    Edith.innerHTML = ''
+ 	  Edith.innerHTML += DramaDivs[0]
+    Edith.innerHTML += DramaDivs[1]
+    Edith.innerHTML += DramaDivs[2]
+    //alert ("hgfhfjh")
+    items = document.getElementsByClassName("item")
+    items[0].style.background = DramaImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = DramaImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = DramaImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+  }
+  function Fantasy() {
+    Empyrea = document.getElementById("shjgajm")
+    Empyrea.innerHTML = ''
+ 	  Empyrea.innerHTML += FantasyDivs[0]
+    Empyrea.innerHTML += FantasyDivs[1]
+    Empyrea.innerHTML += FantasyDivs[2]
+    //alert ("indfogjn")
+    items = document.getElementsByClassName("item")
+    items[0].style.background = FantasyImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = FantasyImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = FantasyImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+  }
+  function Horror() {
+    Elena = document.getElementById("shjgajm")
+    Elena.innerHTML = ''
+	  Elena.innerHTML += HorrorDivs[0]
+    Elena.innerHTML += HorrorDivs[1]
+    Elena.innerHTML += HorrorDivs[2]
+    // alert ("ihbdgskuh")
+    items = document.getElementsByClassName("item")
+    items[0].style.background = HorrorImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = HorrorImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = HorrorImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+  }
+  
+
+  
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
